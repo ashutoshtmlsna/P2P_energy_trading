@@ -110,10 +110,11 @@ def debate(pricing="pqr"):
 
     # timestr = time.strftime("%y_%m_%d-%H_%M_%S")
     # timestr = time.strftime("%y_%m_%d")
-    expt_dir = f"de_expt/gen/expt_{timestr}"
+    #expt_dir = f"de_expt/gen/expt_{timestr}"
     # expt_dir = f"de_expt/expt16_22_06_09"
-    if not os.path.exists(expt_dir):
-        os.mkdir(expt_dir)
+    expt_dir = ""
+    #if not os.path.exists(expt_dir):
+     #   os.mkdir(expt_dir)
     # plt.savefig(expt_dir+"/avg_ind_price_obj_plot_dqnk" + str(s) + "_" + str(b) + "_" + timestr + ".png")
 
     obj_vals['buyer'] = obj_buyer
@@ -123,11 +124,11 @@ def debate(pricing="pqr"):
     for i in range(s):
         ind_prices['seller' + str(i)] = sell_p[i]
     if pricing == "dqn":
-        obj_vals.to_csv(expt_dir+"/obj_vals_dqn_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
-        ind_prices.to_csv(expt_dir+"/ind_prices_dqn_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
+        obj_vals.to_csv("obj_vals_dqn_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
+        ind_prices.to_csv("ind_prices_dqn_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
     else:
-        obj_vals.to_csv(expt_dir+"/obj_vals_q_org_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
-        ind_prices.to_csv(expt_dir+"/ind_prices_q_org_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
+        obj_vals.to_csv("obj_vals_q_org_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
+        ind_prices.to_csv("ind_prices_q_org_"+str(s)+"_"+str(b)+".csv", sep=",", float_format='%.6f')
 
     # np.savetxt(expt_dir+"/de_obj_vals_buyers_"+str(s)+"_"+str(b)+".txt", de_its, delimiter=",", fmt='%.6f')
     # np.savetxt(expt_dir+"/de_obj_vals_popsize_"+str(psize)+".txt", de_its, delimiter=",", fmt='%.6f')

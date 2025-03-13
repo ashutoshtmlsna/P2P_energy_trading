@@ -110,8 +110,8 @@ def debate(pricing="pqr"):
 
     # timestr = time.strftime("%y_%m_%d-%H_%M_%S")
     # timestr = time.strftime("%y_%m_%d")
-    # expt_dir = f"de_expt/gen/expt_{timestr}"
-    expt_dir = f"de_expt/expt16_22_06_09"
+    expt_dir = f"de_expt/gen/expt_{timestr}"
+    # expt_dir = f"de_expt/expt16_22_06_09"
     if not os.path.exists(expt_dir):
         os.mkdir(expt_dir)
     # plt.savefig(expt_dir+"/avg_ind_price_obj_plot_dqnk" + str(s) + "_" + str(b) + "_" + timestr + ".png")

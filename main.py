@@ -81,8 +81,8 @@ ref = pd.read_csv(data_file, sep=",")
 
 timestr = time.strftime("%y_%m_%d")
 expt_dir = f"de_expt/gen/expt_{timestr}"
-if not os.path.exists(expt_dir):
-    os.mkdir(expt_dir)
+#if not os.path.exists(expt_dir):
+ #   os.mkdir(expt_dir)
 
 data_file = "obj_vals_rule_" + str(s) + "_" + str(b) + ".csv"
 if not os.path.isfile(data_file):
@@ -101,7 +101,7 @@ if not os.path.isfile(data_file):
 debate = pd.read_csv(data_file, sep=",")
 print(debate)
 
-data_file = expt_dir+"obj_vals_dqn_" + str(s) + "_" + str(b) + ".csv"
+data_file = "obj_vals_dqn_" + str(s) + "_" + str(b) + ".csv"
 if not os.path.isfile(data_file):
     p2p_debate.debate(pricing="dqn")
 dqn = pd.read_csv(data_file, sep=",")
